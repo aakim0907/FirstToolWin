@@ -67,6 +67,16 @@
           <ButtonText>ToolWindow1</ButtonText>
         </Strings>
       </Button>
+
+		<!--will appear on the toolbar in tool window, with Search icon-->
+		<Button guid="guidFirstToolWindowPackageCmdSet" id="cmdidWindowsMediaOpen" priority="0x0101" type="Button">
+			<Parent guid="guidFirstToolWindowPackageCmdSet" id="ToolbarGroupID"/>
+			<Icon guid="guidImages" id="bmpPicSearch" />
+			<Strings>
+				<CommandName>cmdidWindowsMediaOpen</CommandName>
+				<ButtonText>Load File</ButtonText>
+			</Strings>
+		</Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -90,6 +100,9 @@
 		<!--Node to define a tool bar and toolbar group-->
       <IDSymbol name="ToolbarID" value="0x1000" />
 	  <IDSymbol name="ToolbarGroupID" value="0x1001" />
+		<!--adding commands-->
+		<IDSymbol name="cmdidWindowsMedia" value="0x0100" />
+		<IDSymbol name="cmdidWindowsMediaOpen" value="0x132" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{ed2fecb3-9faf-4135-925c-27ed637e4241}" >

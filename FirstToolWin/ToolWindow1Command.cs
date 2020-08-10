@@ -29,6 +29,12 @@ namespace FirstToolWin
         /// </summary>
         private readonly AsyncPackage package;
 
+        /// For FirstToolWinPackage.vsct - makes the commands available in code
+        public const string guidFirstToolWindowPackageCmdSet = "00000000-0000-0000-0000-0000";  // get the GUID from the .vsct file
+        public const uint cmdidWindowsMedia = 0x100;
+        public const int cmdidWindowsMediaOpen = 0x132;
+        public const int ToolbarID = 0x1000;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolWindow1Command"/> class.
         /// Adds our command handlers for menu (commands must exist in the command table file)
