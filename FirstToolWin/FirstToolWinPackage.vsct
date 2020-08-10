@@ -31,6 +31,24 @@
     group; your package should define its own command set in order to avoid collisions
     with command ids defined by other packages. -->
 
+	  <!--Menus-->
+	  <Menus>
+		  <Menu guid="guidFirstToolWindowPackageCmdSet" id="ToolbarID" priority="0x0000" type="ToolWindowToolbar">
+			  <Parent guid="guidFirstToolWindowPackageCmdSet" id="ToolbarID" />
+			  <Strings>
+				  <ButtonText>Tool Window Toolbar</ButtonText>
+				  <CommandName>Tool Window Toolbar</CommandName>
+			  </Strings>
+		  </Menu>
+	  </Menus>
+
+	  <!--Groups-->
+	  <Groups>
+		  <Group guid="guidFirstToolWindowPackageCmdSet" id="ToolbarGroupID" priority="0x0000">
+			  <Parent guid="guidFirstToolWindowPackageCmdSet" id="ToolbarID" />
+		  </Group>
+	  </Groups>
+	  
     <!--Buttons section. -->
     <!--This section defines the elements the user can interact with, like a menu command or a button
         or combo box in a toolbar. -->
@@ -69,6 +87,9 @@
     <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidFirstToolWinPackageCmdSet" value="{0d6e333e-c0fb-46f6-8176-2b5d8463a0d3}">
       <IDSymbol name="ToolWindow1CommandId" value="0x0100" />
+		<!--Node to define a tool bar and toolbar group-->
+      <IDSymbol name="ToolbarID" value="0x1000" />
+	  <IDSymbol name="ToolbarGroupID" value="0x1001" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{ed2fecb3-9faf-4135-925c-27ed637e4241}" >
