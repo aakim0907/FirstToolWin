@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
+using System.Windows.Forms;
 
 namespace FirstToolWin
 {
@@ -105,6 +106,13 @@ namespace FirstToolWin
 
             IVsWindowFrame windowFrame = (IVsWindowFrame)window.Frame;
             Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure(windowFrame.Show());
+
+            // Create the handles for the toolbar command.
+            var mcs = this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
+            var toolbarbtnCmdID = new CommandID(new Guid(ToolWindow1Command.guidFirstToolWindowPackageCmdSet),
+                ToolWindow1Command.cmdidWindowsMediaOpen);
+            var menuItem = new MenuCommand(new EventHandler(ButtonHandler), toolbarbtnCmdID);
+            mcs.AddCommand(menuItem);
         }
     }
 }

@@ -30,5 +30,13 @@
                 string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
                 "ToolWindow1");
         }
+
+        /// <summary>
+        /// From the event handlers for the toolbar controls, your code must be able to access the Media Player control, which is a child of the FirstToolWindowControl class.
+        /// </summary>
+        public System.Windows.Controls.MediaElement MediaPlayer
+        {
+            get { return mediaElement1; }
+        }
     }
 }
